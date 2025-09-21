@@ -1,0 +1,86 @@
+<h1 class="intro">Admin Dashboard 📝</h1>
+
+<h2>Adoption Requests</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Adopter Name</th>
+      <th>Contact</th>
+      <th>Message</th>
+      <th>Dog ID</th>
+      <th>Action</th> <!-- New column for delete button -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let adoption of adoptions">
+      <td>{{ adoption.adopterName }}</td>
+      <td>{{ adoption.adopterContact }}</td>
+      <td>{{ adoption.message }}</td>
+      <td>{{ adoption.dogId }}</td>
+      <td><button (click)="deleteAdoptionRequest(adoption.id)" class="delete-btn">Delete</button></td> <!-- Delete button -->
+    </tr>
+  </tbody>
+</table>
+
+<h2>Add New Dog</h2>
+<form (ngSubmit)="addDog()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newDog.name" required><br><br>
+
+  <label for="breed">Breed:</label>
+  <input type="text" id="breed" name="breed" [(ngModel)]="newDog.breed" required><br><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age" [(ngModel)]="newDog.age" required><br><br>
+
+  <label for="imageUrl">Image URL:</label>
+  <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="newDog.imageUrl" required><br><br>
+
+  <button type="submit">Add Dog</button>
+</form>
+
+<div id="edit-dog-section"></div>
+<h2>Edit Dog</h2>
+<form *ngIf="editDog" (ngSubmit)="updateDog()">
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" name="name" [(ngModel)]="editDog.name" required><br><br>
+
+    <label for="editBreed">Breed:</label>
+    <input type="text" id="editBreed" name="breed" [(ngModel)]="editDog.breed" required><br><br>
+
+    <label for="editAge">Age:</label>
+    <input type="number" id="editAge" name="age" [(ngModel)]="editDog.age" required><br><br>
+
+    <label for="editImageUrl">Image URL:</label>
+    <input type="text" id="editImageUrl" name="imageUrl" [(ngModel)]="editDog.imageUrl" required><br><br>
+
+    <button type="submit" class="edit-btn">Update Dog</button>
+    <button type="button" (click)="editDog = null">Cancel</button>
+</form>
+
+<h2>Dogs</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Age</th>
+      <th>Adopted?</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dog of dogs">
+      <td>{{ dog.name }}</td>
+      <td>{{ dog.breed }}</td>
+      <td>{{ dog.age }}</td>
+      <td>{{ dog.isAdopted }}</td>
+      <td><img [src]="dog.imageUrl" width="50" height="50" alt="{{dog.name}}"></td>
+      <td>
+        <button (click)="edit(dog)" class="edit-btn" href="#editing">Edit</button>
+        <button (click)="deleteDog(dog.id)" class="delete-btn">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

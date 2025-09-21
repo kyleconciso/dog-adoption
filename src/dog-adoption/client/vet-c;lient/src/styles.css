@@ -1,0 +1,312 @@
+/* Reset and basic styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f6; /* Subtle background color */
+    color: #333;
+  }
+  
+  h1.nav {
+    color: #ffffff; /* Make h1 visible on dark header */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  
+    h2, h3, h1.intro {
+    margin: 0;
+    padding: 1em 0 0.5em;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+  }
+  
+  /* Header, Footer, and Navigation */
+  header {
+    background-color: #0077b6; /* Engaging, vibrant color */
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  footer {
+    background-color: #005f73; /* Slightly darker background for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6em 1.2em;
+    border-radius: 25px; /* Rounded corners */
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: #00b4d8; /* Vibrant hover color */
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a lifted effect */
+  }
+  
+  th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #0077b6; /* Engaging header color */
+    color: #ffffff;
+  }
+  
+  /* Forms */
+  form {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  form button {
+    background-color: #0077b6; /* Engaging color */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #00b4d8; /* Lively hover effect */
+  }
+  
+  /* Section and Spacing Adjustments */
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  img {
+    border-radius: 8px; /* Rounded corners for images */
+  }
+  
+  /* Subtle shadow effect on images */
+  img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  /* Dog Listing Grid Layout (User Page) */
+  .user-dog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flex grid layout */
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .dog-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a lifted effect */
+    text-align: center;
+  }
+  
+  .dog-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .dog-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .dog-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Dog Listing Grid */
+.dog-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between dog cards */
+    justify-content: center;
+  }
+  
+  .dog-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .dog-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .dog-card img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* Spacing between elements inside the dog card */
+  .dog-card h3, .dog-card p {
+    margin-bottom: 10px; /* Adds space between each piece of information */
+  }
+  
+  /* Extra padding for the button section */
+  .dog-card button {
+    margin-top: 15px; /* Adds more space between the info and buttons */
+  }
+  
+  /* Button Color and Hover */
+  button.adopt-btn {
+    background-color: #00b4d8;
+    color: white;
+  }
+  
+  button.adopt-btn:hover {
+    background-color: #0077b6;
+  }
+  
+  button.edit-btn {
+    background-color: #ffb703;
+    color: white;
+  }
+  
+  button.edit-btn:hover {
+    background-color: #f57c00;
+  }
+  
+  button.delete-btn {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  button.delete-btn:hover {
+    background-color: #c0392b;
+  }
+
+  /* Improve the look of forms and inputs */
+  form input, form select, form textarea {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  form input[type="submit"] {
+    background-color: #00b4d8;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #0077b6;
+  }
+  
+
+  /* Button Styles for Adoption, Edit, Delete */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Ensure spacing between buttons */
+    margin-bottom: 10px; /* Add spacing below buttons */
+  }
+  
+  /* Specific button styles */
+  button.adopt-btn {
+    background-color: #00b4d8;
+    color: #ffffff;
+  }
+  
+  button.adopt-btn:hover {
+    background-color: #0077b6;
+  }
+  
+  button.edit-btn {
+    background-color: #ffb703;
+    color: #ffffff;
+  }
+  
+  button.edit-btn:hover {
+    background-color: #f57c00;
+  }
+  
+  button.delete-btn {
+    background-color: #e63946;
+    color: #ffffff;
+  }
+  
+  button.delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Ensure buttons are aligned correctly */
+  button {
+    display: inline-block;
+  }
+  

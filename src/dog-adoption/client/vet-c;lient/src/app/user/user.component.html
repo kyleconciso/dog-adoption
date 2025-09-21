@@ -1,0 +1,38 @@
+<h1 class="intro">Available Dogs for Adoption 🐾</h1>
+
+<title>Adopt A Dog | User Page</title>
+
+<div class="user-dog-list">
+  <div *ngFor="let dog of dogs" class="dog-card">
+    <img [src]="dog.imageUrl" alt="{{ dog.name }}">
+    <h3>{{ dog.name }}</h3>
+    <p>Breed: {{ dog.breed }}</p>
+    <p>Age: {{ dog.age }}</p>
+
+    <button class="adopt-btn" (click)="selectDog(dog)" *ngIf="!selectedDog || selectedDog.id !== dog.id">Adopt Me!</button>
+
+    <div *ngIf="selectedDog && selectedDog.id === dog.id">
+      <h2>Adoption Request</h2>
+
+      <form (ngSubmit)="submitAdoption()">
+        <input type="hidden" name="dogId" [(ngModel)]="adoptionRequest.dogId" [value]="dog.id">
+        <div>
+          <label for="adopterName">Your Name:</label>
+          <input type="text" id="adopterName" name="adopterName" [(ngModel)]="adoptionRequest.adopterName" required>
+        </div>
+        <div>
+          <label for="adopterContact">Contact Information:</label>
+          <input type="text" id="adopterContact" name="adopterContact" [(ngModel)]="adoptionRequest.adopterContact" required>
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" [(ngModel)]="adoptionRequest.message"></textarea>
+        </div>
+
+        <input type="hidden" name="dogId" [(ngModel)]="adoptionRequest.dogId">
+
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</div>
